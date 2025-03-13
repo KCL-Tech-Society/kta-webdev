@@ -19,7 +19,7 @@ const createHabit = (req, res) => {
 
 const updateHabit = (req, res) => {
   console.log(req.params.id);
-  const habit = habits.find((h) => h.id == req.params.id);
+  const habit = habits.find((h) => h.id === req.params.id);
   console.log(habit);
   if (!habit)
     return res.status(404).json({
@@ -31,13 +31,13 @@ const updateHabit = (req, res) => {
 };
 
 const deleteHabit = (req, res) => {
-  const habit = habits.filter((habit) => habit.id != req.params.id);
+  const habit = habits.filter((habit) => habit.id !== req.params.id);
   if (!habit)
     return res.status(404).json({
       message: "Habit not found",
     });
 
-  habits = habits.filter((habit) => habit.id != req.params.id);
+  habits = habits.filter((habit) => habit.id !== req.params.id);
   res.status(200).json({
     message: "Habit deleted successfully",
   });
