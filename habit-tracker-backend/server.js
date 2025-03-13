@@ -19,11 +19,11 @@ const app = express(); // Create an express app
 app.use(cors()); // Will be important when we deploy our frontend and backend separately
 app.use(express.json()); // Parse JSON bodies
 
-app.get("/", (req, res) => {
+app.get("/api", (req, res) => {
   res.send("Hello KCL");
 });
 
-app.use("/habits", habitRoutes);
+app.use("/api/habits", habitRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
