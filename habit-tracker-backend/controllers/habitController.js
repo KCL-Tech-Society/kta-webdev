@@ -19,9 +19,7 @@ const createHabit = (req, res) => {
 };
 
 const updateHabit = (req, res) => {
-  console.log(req.params.id);
   const habit = habits.find((h) => h.id === req.params.id);
-  console.log(habit);
   if (!habit)
     return res.status(404).json({
       message: "Habit not found",
