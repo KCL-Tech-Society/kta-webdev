@@ -7,7 +7,7 @@ const getHabits = (req, res) => {
 
 const createHabit = (req, res) => {
   const newHabit = {
-    id: habits.length + 1,
+    id: `${req.body.name}-${Date.now()}`,
     name: req.body.name,
     habit: req.body.habit,
     completed: false,
@@ -31,13 +31,13 @@ const updateHabit = (req, res) => {
 };
 
 const deleteHabit = (req, res) => {
-  const habit = habits.filter((habit) => habit.id !== req.params.id);
+  const habit = habits.filter((habit) => habit.id != req.params.id);
   if (!habit)
     return res.status(404).json({
       message: "Habit not found",
     });
 
-  habits = habits.filter((habit) => habit.id !== req.params.id);
+  habits = habits.filter((habit) => habit.id != req.params.id);
   res.status(200).json({
     message: "Habit deleted successfully",
   });
