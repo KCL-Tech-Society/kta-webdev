@@ -11,7 +11,7 @@ const createHabit = (req, res) => {
     name: req.body.name,
     habit: req.body.habit,
     completed: false,
-    createdAt: new Date(),
+    createdAt: new Date().toISOString(),
   };
 
   habits.push(newHabit);
