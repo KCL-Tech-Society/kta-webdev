@@ -2,6 +2,9 @@
 
 This repository contains the backend code for the Habit Tracker project, developed during Week 3 (Node.js & Express.js) of the KCL Tech Academy Webdev Workshop Series, hosted by Waseef Khan. The `index.html` file was developed during Weeks 1 and 2 (HTML & CSS, JavaScript).
 
+
+Follow [@kcltech](https://www.instagram.com/kcltech/) and [@kcl_tech_academy](https://www.instagram.com/kcl_tech_academy/) on Instagram for updates!
+
 ## Installation
 
 To install the necessary npm packages, follow these steps:
