@@ -1,11 +1,13 @@
 # Habit Tracker Backend
 
-This repository contains the backend code for the Habit Tracker project, developed during Week 3 (Node.js & Express.js) of the KCL Tech Academy Webdev Workshop Series, hosted by Waseef Khan. The `index.html` file was developed during Weeks 1 and 2 (HTML & CSS, JavaScript).
-
+This repository contains the backend code for the Habit Tracker project, developed during Week 3 (Node.js & Express.js) of the KCL Tech Academy Webdev Workshop Series, hosted by Waseef Khan. The `index.html` file was developed during Weeks 1 and 2 (HTML & CSS, JavaScript). The frontend React application was developed in Week 4.
 
 Follow [@kcltech](https://www.instagram.com/kcltech/) and [@kcl_tech_academy](https://www.instagram.com/kcl_tech_academy/) on Instagram for updates!
 
-## Installation
+
+#### Note: You will need to run the backend and frontend servers in separate terminals.
+
+## Installation & Backend Setup
 
 To install the necessary npm packages, follow these steps:
 
@@ -13,7 +15,7 @@ To install the necessary npm packages, follow these steps:
     ```bash
     git clone https://github.com/KCL-Tech-Society/kta-webdev.git
     ```
-    Or download the ZIP file from the repository page and extract it.
+    Or download the **ZIP file** from the repository page and extract it.
 
 2. Navigate to the project directory:
     ```bash
@@ -30,12 +32,34 @@ To install the necessary npm packages, follow these steps:
     PORT=5000
     ```
 
-## Usage
+5. After installing the npm packages, you can start the development server with:
+    ```bash
+    npm run dev
+    ```
 
-After installing the npm packages, you can start the development server with:
-```bash
-npm run dev
-```
+## Frontend Setup
+
+To set up and start the frontend React application, follow these steps:
+
+1. Navigate to the frontend directory:
+    ```bash
+    cd ./frontend
+    ```
+
+2. Install the npm packages:
+    ```bash
+    npm install
+    ```
+
+3. Update the `package.json` file to add a proxy for the backend:
+    ```json
+    "proxy": "http://localhost:5000"
+    ```
+
+4. Start the React development server:
+    ```bash
+    npm start
+    ```
 
 ## Contributing
 
