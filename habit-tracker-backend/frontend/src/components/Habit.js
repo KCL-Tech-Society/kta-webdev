@@ -1,23 +1,14 @@
 import React from "react";
 
-/* Habit component displays a single habit in a table row.
-It receives the habit data as props and renders the habit
-details in table cells. It also includes a checkbox to mark
-the habit as completed and a delete button to delete the
-habit. The handleCheckboxChange function updates the habit's
-completed status when the checkbox is toggled. The Habit
-component is used in the HabitList component to render
-each habit in the list. */
-
 /**
  * @description Habit component displays a single habit in a table row.
- * @param {string} id
- * @param {string} createdAt
- * @param {string} name
- * @param {string} habit
- * @param {boolean} completed
- * @param {Function} updateHabit
- * @param {Function} deleteHabit
+ * @param {string} id - Habit ID
+ * @param {string} createdAt - Date the habit was created
+ * @param {string} name - Name of the person tracking the habit
+ * @param {string} habit - Habit to be tracked
+ * @param {boolean} completed - Whether the habit has been completed
+ * @param {Function} updateHabit - Function to update a habit
+ * @param {Function} deleteHabit - Function to delete a habit
  * @returns {JSX.Element} Habit component
  */
 const Habit = ({
@@ -29,10 +20,12 @@ const Habit = ({
   updateHabit,
   deleteHabit,
 }) => {
+  // Function to handle checkbox change, updates habit completed status
   const handleCheckboxChange = (e) => {
     updateHabit(id, { completed: e.target.checked });
   };
 
+  // Render habit details in table cells with checkbox and delete button
   return (
     <>
       <td>{createdAt}</td>

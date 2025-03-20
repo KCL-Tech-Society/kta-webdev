@@ -1,5 +1,9 @@
 import React from "react";
 
+/**
+ * @description About page component for the Habit Tracker app
+ * @returns {JSX.Element}
+ */
 const About = () => {
   return (
     <div

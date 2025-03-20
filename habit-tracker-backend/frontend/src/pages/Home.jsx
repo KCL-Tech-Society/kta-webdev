@@ -2,15 +2,22 @@ import React, { useEffect, useState } from "react";
 import HabitList from "../components/HabitList";
 import HabitForm from "../components/HabitForm";
 
+/**
+ * @description Home page component for the Habit Tracker app
+ * @returns {JSX.Element}
+ */
 const Home = () => {
+  // useState hook to store the habits in the component's state
   const [habits, setHabits] = useState([]);
 
+  // GET Function to fetch habits from the backend
   const getHabits = async () => {
     await fetch("/api/habits")
       .then((res) => res.json())
       .then((data) => setHabits(data));
   };
 
+  // PUT Function to update a habit, takes the habit ID and the updated data
   const updateHabit = async (id, data) => {
     try {
       const response = await fetch(`/api/habits/${id}`, {
@@ -26,7 +33,7 @@ const Home = () => {
       }
 
       const updatedHabits = habits.map((habit) => {
-        if (habit.id === id) {
+        if (habit._id === id) {
           return { ...habit, ...data };
         }
 
@@ -40,6 +47,7 @@ const Home = () => {
     }
   };
 
+  // DELETE Function to delete a habit, takes the habit ID
   const deleteHabit = async (id) => {
     try {
       const response = await fetch(`/api/habits/${id}`, {
@@ -50,7 +58,7 @@ const Home = () => {
         throw new Error("Failed to delete habit");
       }
 
-      const updatedHabits = habits.filter((habit) => habit.id !== id);
+      const updatedHabits = habits.filter((habit) => habit._id !== id);
       setHabits(updatedHabits);
     } catch (error) {
       console.error("Error:", error);
@@ -58,6 +66,7 @@ const Home = () => {
     }
   };
 
+  // POST Function to add a new habit, takes the habit data
   const handleAddHabit = async (data) => {
     try {
       const response = await fetch("/api/habits", {
@@ -77,10 +86,12 @@ const Home = () => {
     }
   };
 
+  // useEffect hook to fetch habits when the component loads for the first time
   useEffect(() => {
     getHabits();
   }, []);
 
+  // Render the Home component with the HabitList and HabitForm components
   return (
     <div>
       <h1>Habit Tracker</h1>

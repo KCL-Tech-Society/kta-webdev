@@ -10,13 +10,15 @@ the habits array and renders a Habit component for each habit */
  * @param {Object[]} habits - Array of habit objects.
  * @param {Function} updateHabit - Function to update a habit.
  * @param {Function} deleteHabit - Function to delete a habit.
- * @returns {JSX.Element} A table of habits.
+ * @returns {JSX.Element} - A table of habits.
  */
 const HabitList = ({ habits, updateHabit, deleteHabit }) => {
+  // Sort habits by createdAt date in ascending order
   const sortedHabits = habits.sort(
     (a, b) => new Date(a.createdAt) - new Date(b.createdAt)
   );
 
+  // Render a table with habit details for each habit
   return (
     <table>
       <thead>
@@ -29,10 +31,11 @@ const HabitList = ({ habits, updateHabit, deleteHabit }) => {
         </tr>
       </thead>
       <tbody>
+        {/* Map over habits array and render a Habit component for each habit */}
         {sortedHabits.map((habit) => (
-          <tr key={habit.id}>
+          <tr key={habit._id}>
             <Habit
-              id={habit.id}
+              id={habit._id}
               createdAt={habit.createdAt}
               name={habit.name}
               habit={habit.habit}

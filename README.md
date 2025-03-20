@@ -30,6 +30,7 @@ To install the necessary npm packages, follow these steps:
 4. Create a `.env` file in the project directory and specify the `PORT`:
     ```bash
     PORT=5000
+    MONGO_URI=your-mongodb-uri
     ```
 
 5. After installing the npm packages, you can start the development server with:
