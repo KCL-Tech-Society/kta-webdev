@@ -1,6 +1,6 @@
 # Habit Tracker Backend
 
-This repository contains the backend code for the Habit Tracker project, developed during Week 3 (Node.js & Express.js) of the KCL Tech Academy Webdev Workshop Series, hosted by Waseef Khan. The `index.html` file was developed during Weeks 1 and 2 (HTML & CSS, JavaScript). The frontend React application was developed in Week 4.
+This repository contains the backend code for the Habit Tracker project, developed in the KCL Tech Academy Webdev Workshop Series, hosted by Waseef Khan. The `index.html` file was developed during Weeks 1 and 2 (HTML & CSS, JavaScript). The backend was developed during Week 3 (Node.js & Express.js). The frontend React application was developed in Week 4 and MongoDB implementation was added in Week 5.
 
 Follow [@kcltech](https://www.instagram.com/kcltech/) and [@kcl_tech_academy](https://www.instagram.com/kcl_tech_academy/) on Instagram for updates!
 
